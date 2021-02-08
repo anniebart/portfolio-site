@@ -1,4 +1,4 @@
-# ✿ Flora
+# ✿ Planted
 
 ###  A static site generator using [sustainable web development practices](https://github.com/lowtechmag/solar/wiki/Solar-Web-Design). 
 
