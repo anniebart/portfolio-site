@@ -6,16 +6,39 @@ import matter from 'gray-matter'
 import marked from 'marked'
 import mkdirp from 'mkdirp'
 import glob from 'glob'
+import Jimp from 'jimp'
 
-
+//links will contain objects with links + titles to all the posts
 const links = []
 //parse the markdown file, convert to html
 const readFile = (filename) =>{
     const rawFile = fs.readFileSync(filename, 'utf8')
     const parsed = matter(rawFile)
     const html = marked(parsed.content)
+    
     return {...parsed, html}
 }
+
+//dither + resize image using Jimp
+const ditherImage = (url) => Jimp.create(url)
+  .then(image => {
+    let img = image.clone()
+    img.dither16()
+    const basename = path.basename(url)
+    const outPath = path.join(path.resolve(), 'images')
+    img.writeAsync(outPath + basename)            // ordered dithering of the image and reduce color space to 16-bits (RGB565)
+  })
+  .catch(err => {
+    console.log(err)
+  });
+
+const processImages = (img) =>{
+    
+    
+}
+ditherImage('https://www.anniebartholomew.com/screen-shot-2020-12-11-at-1.42.10-pm.png')
+
+ 
 
 //change the file extension from .md to .html
 const getOutputFilename = (filename, outPath)=>{
@@ -23,8 +46,6 @@ const getOutputFilename = (filename, outPath)=>{
     const newFilename = basename.substring(0, basename.length - 3) + '.html'
     const outfile = path.join(outPath, newFilename)
     return outfile
-
-
 }
 
 
@@ -79,13 +100,13 @@ const main = () => {
 }
 main();
 
-
+//make index page template
 const makeIndexPage = (template, content) =>
     template
-        .replace(/<!--content-->/g, content)
+        .replace(/{{content}}/g, content)
     
 
-
+//create index page with links to all pages
 const index = () =>{
     const srcPath = path.join(path.resolve(), 'src')
     const indexTemplate = readFileSync(
@@ -95,7 +116,7 @@ const index = () =>{
     const outPath = path.join(path.resolve(), 'dist')
     let str = ''
     const list = links.forEach(item=>{
-        str +=`<a href="${item.link}"><li> ${item.title} </li></a>\n`
+        str +=`<a href="${item.link}"><li class="postSquare"> <h4>${item.title} <h4></li></a>\n`
     })
 
     const indexPage = makeIndexPage(indexTemplate, str)
@@ -103,7 +124,7 @@ const index = () =>{
 }
 index();
 
-//create index page with links to all pages
+
 export default {main, index}
 
 
