@@ -7,6 +7,7 @@ import marked from 'marked'
 import mkdirp from 'mkdirp'
 import glob from 'glob'
 import Jimp from 'jimp'
+import YAML from 'yaml'
 
 //links will contain objects with links + titles to all the posts
 const links = []
@@ -79,9 +80,11 @@ const processFile = (filename, template, outPath) =>{
         
         if (parentDir == 'posts'){
             const link = path.basename(outFileName)
-            const title = file.data.title
+            const cat = file.data.category
+            let title = file.data.title
+            if (title.length > 20) title = title.slice(0, 20) + '...'
             const date = file.data.date
-            links.push({title: title, date: date, link: link })
+            links.push({title: title, date: date, link: link, cat: cat })
         }
         
         }
@@ -111,8 +114,10 @@ main();
 const makeIndexPage = (template, content) =>
     template
         .replace(/{{content}}/g, content)
-        // .replace(/{{title}}/g, title)
-    
+        // .replace(/{{title}}/g, matter('config.yaml').data.title)
+
+
+
 
 //create index page with links to all pages
 const index = () =>{
@@ -123,8 +128,14 @@ const index = () =>{
         )
     const outPath = path.join(path.resolve(), 'dist')
     let str = ''
+    console.log(links)
+    links.sort((a, b)=>{
+        if (a.date > b.date) return -1
+        else return 1
+    })
+    console.log(links)
     const list = links.forEach(item=>{
-        str +=`<a href="${item.link}"><li class="postSquare"> <h2>${item.title} </h2> <p>${item.date} </p></li></a>\n`
+        str +=`<a href="${item.link}"><li class="postSquare"> <p>${item.title} </p> <p>${item.cat}</p> <p>${item.date} </p></li></a>\n`
     })
 
     const indexPage = makeIndexPage(indexTemplate, str)

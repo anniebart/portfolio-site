@@ -1,32 +1,28 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 body {
-    font-family: monospace;
+    font-family: Space Mono;
     height: 100%;
 
 }
-.flex {
+
+
+.indexContent {
     display: flex;
     justify-content: center;
-
+    
 }
 
 .content {
     padding-left: 20vw;
-    display: flex;
-    margin-top: 80px;
-  
-    
+    margin: 80px 5% 0 5%;
 }
-h1 {
-    text-align: center;
-}
+
 ul {
     padding: 0;
-    margin: 0 auto;
-    border-top: black dashed 3px;
+    margin: 0;
     list-style: none;
-    width:80%;
+    width: 50vw;
 }
 a {
     margin: 0;
@@ -35,23 +31,39 @@ a {
     color: black;
     
 }
+.content a:hover {
+    border: dashed 3px darkseagreen;
 
+}
 
+.content a {
+    border-bottom: dashed 2px steelblue; 
+}
 .postSquare {
    display: flex;
+   flex-wrap: wrap;
    align-items: center;
    justify-content: space-between;
    
 }
+.postSquare p {
+width: 25%;
+}
+.postSquare p:nth-child(1){
+    width: 50%;
+    
+}
+
+.postSquare p:nth-child(3){
+    text-align: right;
+}
+
+
 
 .postSquare:hover {
-    border-bottom: dashed darkslategrey 2px;
+    border-bottom: dashed black 2px;
 }
 
-
-h4 {
-    text-align: center;
-}
 
 nav {
     position: fixed;
@@ -63,7 +75,11 @@ nav {
     height: 100vh;
     border-right: 4px solid black;
 }
+
 nav div {
     margin: 25% 0;
+}
+p {
+    font-size: 16px;
 }
 
