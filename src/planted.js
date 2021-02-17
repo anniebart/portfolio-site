@@ -25,7 +25,7 @@ const ditherImage = (url) => Jimp.create(url)
     let img = image.clone()
     img.dither16()
     const basename = path.basename(url)
-    const outPath = path.join(path.resolve(), 'images')
+    const outPath = path.join(path.resolve(), '/public/assets/images')
     img.writeAsync(outPath + basename)            // ordered dithering of the image and reduce color space to 16-bits (RGB565)
   })
   .catch(err => {
@@ -33,10 +33,10 @@ const ditherImage = (url) => Jimp.create(url)
   });
 
 const processImages = (img) =>{
-    
+    console.log(img)
     
 }
-ditherImage('https://www.anniebartholomew.com/screen-shot-2020-12-11-at-1.42.10-pm.png')
+
 
  
 
@@ -73,14 +73,18 @@ const processFile = (filename, template, outPath) =>{
         {date: file.data.date, 
         title: file.data.title, 
         content: file.html})
-
-    saveFile(outFileName, templated)
-
-const link = path.basename(outFileName)
-const title = file.data.title
-links.push({title: title, link: link })
-}
-
+        saveFile(outFileName, templated)
+        const parentDir = path.basename(path.dirname(filename))
+        
+        
+        if (parentDir == 'posts'){
+            const link = path.basename(outFileName)
+            const title = file.data.title
+            const date = file.data.date
+            links.push({title: title, date: date, link: link })
+        }
+        
+        }
 //putting it all together -> reading, parsing, processing + writing html files from markdown files and saving it to a dist folder. 
 const main = () => {
     const srcPath = path.join(path.resolve(), 'src')
@@ -90,10 +94,13 @@ const main = () => {
         'utf8'
         )
     const filenames = glob.sync(srcPath + '/pages/**/*.md')
+
     filenames.forEach((filename) =>{
         processFile(filename, template, outPath)
     })
     
+  
+   
 
     
     
@@ -104,6 +111,7 @@ main();
 const makeIndexPage = (template, content) =>
     template
         .replace(/{{content}}/g, content)
+        // .replace(/{{title}}/g, title)
     
 
 //create index page with links to all pages
@@ -116,7 +124,7 @@ const index = () =>{
     const outPath = path.join(path.resolve(), 'dist')
     let str = ''
     const list = links.forEach(item=>{
-        str +=`<a href="${item.link}"><li class="postSquare"> <h4>${item.title} <h4></li></a>\n`
+        str +=`<a href="${item.link}"><li class="postSquare"> <h2>${item.title} </h2> <p>${item.date} </p></li></a>\n`
     })
 
     const indexPage = makeIndexPage(indexTemplate, str)

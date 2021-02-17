@@ -1,5 +1,5 @@
 ---
-title: Hi there
+title: Something
 author: meeeee
 date: August 20, 2020
 ---
