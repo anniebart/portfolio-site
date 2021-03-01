@@ -7,7 +7,7 @@ import marked from 'marked'
 import mkdirp from 'mkdirp'
 import glob from 'glob'
 import Jimp from 'jimp'
-import YAML from 'yaml'
+
 
 //links will contain objects with links + titles to all the posts
 const links = []
@@ -64,25 +64,49 @@ const makePost = (template, {date, title, content}) =>
         .replace(/<!--title-->/g, title)
         .replace(/<!--content-->/g, content)
 
+const makeHomePage = (template, {content, title}) => 
+        template
+            .replace(/<!--date-->/g, " ")
+            .replace(/<!--title-->/g, " ")
+            .replace(/<!--content-->/g, content)
+
+const makeAboutPage = (template, {content, title}) => 
+        template
+            .replace(/<!--date-->/g, " ")
+            .replace(/<!--title-->/g, title)
+            .replace(/<!--content-->/g, content)
+    
 
     
        
 const processFile = (filename, template, outPath) =>{
     const file = readFile(filename)
     const outFileName = getOutputFilename(filename, outPath)
-    const templated = makePost(template, 
-        {date: file.data.date, 
-        title: file.data.title, 
-        content: file.html})
+    const parentDir = path.basename(path.dirname(filename))
+    if (parentDir == 'index') {
+        const templated = makeHomePage(template, {content: "<div class='index'>" + file.html + "</div>"})
         saveFile(outFileName, templated)
-        const parentDir = path.basename(path.dirname(filename))
+    } 
+    else if (parentDir =='about'){
+        const templated = makeAboutPage(template, {content: file.html, title: file.data.title})
+        saveFile(outFileName, templated)
+    } 
+    
+    else{
+        const templated = makePost(template, 
+            {date: file.data.date, 
+            title: file.data.title, 
+            content: file.html})
+            saveFile(outFileName, templated)
+            
+    }
+
         
-        
-        if (parentDir == 'posts'){
+        if (parentDir == 'projects'){
             const link = path.basename(outFileName)
             const cat = file.data.category
             let title = file.data.title
-            if (title.length > 20) title = title.slice(0, 20) + '...'
+            if (title.length > 40) title = title.slice(0, 40) + '...'
             const date = file.data.date
             links.push({title: title, date: date, link: link, cat: cat })
         }
@@ -91,7 +115,7 @@ const processFile = (filename, template, outPath) =>{
 //putting it all together -> reading, parsing, processing + writing html files from markdown files and saving it to a dist folder. 
 const main = () => {
     const srcPath = path.join(path.resolve(), 'src')
-    const outPath = path.join(path.resolve(), 'dist')
+    const outPath = path.join(path.resolve(), 'site')
     const template = readFileSync(
         path.join(srcPath, 'template.html'), 
         'utf8'
@@ -135,7 +159,8 @@ const index = () =>{
     })
     console.log(links)
     const list = links.forEach(item=>{
-        str +=`<a href="${item.link}"><li class="postSquare"> <p>${item.title} </p> <p>${item.cat}</p> <p>${item.date} </p></li></a>\n`
+        str +=`<a href="${item.link}"><li class="postSquare"> <h6>${item.title} </h6> <h6>${item.cat}</h6> <h6>${item.date}</h6></li></a>\n`
+        
     })
 
     const indexPage = makeIndexPage(indexTemplate, str)
