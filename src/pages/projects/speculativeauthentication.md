@@ -8,3 +8,5 @@ After stumbling across [this](https://passwords.ai/) website documenting the wor
 
 After playing with color as a password, I changed my approach to using pixel art as a speculative authentication method. Still very much a work in progress (particularly around encryption/hashing/salting/security), but an intriguing exercise in reimagining how we authenticate ourselves online and wondering the possible "what ifs" around it.
 
+![Screenshot of the homepage for speculative authentication project, a grid of small white squares with black outlines, a handful of filled in squares in a rainbow of colors and a log in and sign up button](assets/images/SpecAuthHome.png)
+
