@@ -62,18 +62,21 @@ const makePost = (template, {date, title, content}) =>
     template
         .replace(/<!--date-->/g, date)
         .replace(/<!--title-->/g, title)
+        .replace(/<!--page-title-->/g, title)
         .replace(/<!--content-->/g, content)
 
 const makeHomePage = (template, {content, title}) => 
         template
             .replace(/<!--date-->/g, " ")
             .replace(/<!--title-->/g, " ")
+            .replace(/<!--page-title-->/g, title)
             .replace(/<!--content-->/g, content)
 
 const makeAboutPage = (template, {content, title}) => 
         template
             .replace(/<!--date-->/g, " ")
             .replace(/<!--title-->/g, title)
+            .replace(/<!--page-title-->/g, title)
             .replace(/<!--content-->/g, content)
     
 
