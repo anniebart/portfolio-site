@@ -33,10 +33,7 @@ const ditherImage = (url) => Jimp.create(url)
     console.log(err)
   });
 
-const processImages = (img) =>{
-    console.log(img)
-    
-}
+
 
 
  

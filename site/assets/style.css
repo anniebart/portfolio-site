@@ -16,6 +16,9 @@ body {
     min-height: 80vh;
     padding-top:20px;
 }
+.content img {
+    margin: 0 auto;
+}
 .content a{
 border-bottom: 1px solid #182281;
 }
@@ -34,13 +37,15 @@ footer {
 .rotate {
     transform: rotate(270deg);  
     position: fixed;
-    left:-150px;
-    top:220px;
+    left:-190px;
+    top:260px;
+
     
 }
 .rotate a {
     margin-left: 20px;
 }
+
 .icons {
     position:fixed;
     right:8px;
@@ -90,6 +95,11 @@ h1 {
     font-size:64px;
     margin-bottom: 100px;
 }
+h2 {
+    font-size: 36px;
+    border-bottom: 4px dotted #182281;
+    margin:0;
+}
 .postSquare h6 {
 width: 25%;
 }
@@ -115,6 +125,9 @@ nav {
 img {
     max-width: 800px;
     width:80vw;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
 }
 @media (max-width:720px){
     p {
