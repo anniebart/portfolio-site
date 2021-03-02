@@ -14,8 +14,14 @@ One of the first things I did on the team was to audit the accessibility complia
 
 Other core work I've done at OCV is around designing content (in collaboration with the rest of the OCV team) for social media. With a following of over 18k on Instagram, the content we put out is seen by a lot of eyes. (For examples of OCV's social media, please visit OCV's [Instagram](https://www.instagram.com/ourclimatevoices/), [Facebook](https://www.facebook.com/ourclimatevoices) and [Twitter](https://twitter.com/Climate__Voices) pages). 
 
-![Screenshot of Climate Privilege Quiz](assets/images/ClimatePrivilege.svg)
+A large project I worked on was the Mapping Your Climate Story - an interactive web application that posed a series of questions to the use to determine where they fell on an axis of privilege, ranging from 'less' to 'more'. 
 
-Other projects include producing [video content](https://www.ourclimatevoices.org/2020/sheila), maintaining OCV's squarespace site and I'm currently developing an interactive web application as a companion piece to OCV's forthcoming documentary, [Police in Our Climate.](https://www.ourclimatevoices.org/pioc)
+[![Screenshot of Climate Privilege Quiz](assets/images/ClimatePrivilege.png)](https://climate-privilege-checker.superhi.com/checker.html)
+*A screenshot of the Mapping Your Climate story project I worked on with our digital content director*
+
+[![Screenshot of Climate Privilege Quiz](assets/images/ClimatePrivilege2.png)](https://climate-privilege-checker.superhi.com/checker.html)
+*The position of users moves along an axis representing the relative privileges they have based on a series of questions. Stories and other resources are interwoven into the exercise.*
+
+Other projects include producing [video content](https://www.ourclimatevoices.org/2020/sheila), maintaining OCV's squarespace site and I'm currently developing another interactive web application as a companion piece to OCV's forthcoming documentary, [Police in Our Climate.](https://www.ourclimatevoices.org/pioc)
 
 
