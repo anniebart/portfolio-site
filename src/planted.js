@@ -59,13 +59,15 @@ const makePost = (template, {date, title, content}) =>
     template
         .replace(/<!--date-->/g, date)
         .replace(/<!--title-->/g, title)
+        .replace(/{{description}}/g, description)
         .replace(/<!--page-title-->/g, title)
         .replace(/<!--content-->/g, content)
 
-const makeHomePage = (template, {content, title}) => 
+const makeHomePage = (template, {content, title, description}) => 
         template
             .replace(/<!--date-->/g, " ")
             .replace(/<!--title-->/g, " ")
+            .replace(/{{description}}/g, description)
             .replace(/<!--page-title-->/g, title)
             .replace(/<!--content-->/g, content)
 
@@ -74,21 +76,19 @@ const makeAboutPage = (template, {content, title}) =>
             .replace(/<!--date-->/g, " ")
             .replace(/<!--title-->/g, title)
             .replace(/<!--page-title-->/g, title)
+            .replace(/{{description}}/g, description)
             .replace(/<!--content-->/g, content)
-    
-
-    
        
 const processFile = (filename, template, outPath) =>{
     const file = readFile(filename)
     const outFileName = getOutputFilename(filename, outPath)
     const parentDir = path.basename(path.dirname(filename))
     if (parentDir == 'index') {
-        const templated = makeHomePage(template, {content: "<div class='index'>" + file.html + "</div>"})
+        const templated = makeHomePage(template, {content: "<div class='index'>" + file.html + "</div>", description: file.data.description,})
         saveFile(outFileName, templated)
     } 
     else if (parentDir =='about'){
-        const templated = makeAboutPage(template, {content: file.html, title: file.data.title})
+        const templated = makeAboutPage(template, {content: file.html, title: file.data.title, description: file.data.description,})
         saveFile(outFileName, templated)
     } 
     
@@ -96,6 +96,7 @@ const processFile = (filename, template, outPath) =>{
         const templated = makePost(template, 
             {date: file.data.date, 
             title: file.data.title, 
+            description: file.data.description,
             content: file.html})
             saveFile(outFileName, templated)
             
@@ -135,41 +136,45 @@ const main = () => {
 main();
 
 //make index page template
-const makeIndexPage = (template, content) =>
+//make projects page template
+const makeProjectPage = (template, {content, description}) =>
     template
         .replace(/{{content}}/g, content)
-        // .replace(/{{title}}/g, matter('config.yaml').data.title)
-
-
-
-
+        .replace(/{{description}}/g, description)
 //create index page with links to all pages
-const index = () =>{
+const projects = () =>{
     const srcPath = path.join(path.resolve(), 'src')
     const indexTemplate = readFileSync(
-        path.join(srcPath, 'homeTemplate.html'), 
+        path.join(srcPath, 'projectsTemplate.html'), 
         'utf8'
         )
-    const outPath = path.join(path.resolve(), 'dist')
-    let str = ''
-    console.log(links)
-    links.sort((a, b)=>{
+    const outPath = path.join(path.resolve(), 'site')
+    let indexStr = ''
+    let otherStr = ''
+    indexLinks.sort((a, b)=>{
         if (a.date > b.date) return -1
         else return 1
     })
-    console.log(links)
-    const list = links.forEach(item=>{
-        str +=`<a href="${item.link}"><li class="postSquare"> <h6>${item.title} </h6> <h6>${item.cat}</h6> <h6>${item.date}</h6></li></a>\n`
-        
+    otherLinks.sort((a, b)=>{
+        if (a.date > b.date) return -1
+        else return 1
+    })
+    
+    const indexList = indexLinks.forEach(item=>{
+        indexStr +=`<a href="${item.link}"><li class="postSquare"> <h6>${item.title}</h6><h6>${item.cat}</h6><h6>${item.date} </h6></li></a>`
+    })
+    const otherList = otherLinks.forEach(item=>{
+        otherStr +=`<a href="${item.link}"><li class="postSquare"> <h6>${item.title}</h6><h6>${item.cat}</h6><h6>${item.date} </h6></li></a>`
     })
 
-    const indexPage = makeIndexPage(indexTemplate, str)
-    saveFile(outPath + '/index.html', indexPage)
+    const indexPage = makeProjectPage(indexTemplate, {content: indexStr, description: 'Annie Bartholomew is a designer, programmer and artist. Past projects include speculative designs for authentication methods and message sending, various design work for Our Climate Voices + freelance digital design work. She is an alum of Recurse Center.'})
+    const otherPage = makeProjectPage(indexTemplate, {content: otherStr, description: 'Annie Bartholomew is a designer, artist + programmer'})
+    saveFile(outPath + '/projects.html', indexPage)
+    saveFile(outPath+ '/other.html', otherPage)
 }
-index();
+projects();
 
-
-export default {main, index}
+export default {main, projects}
 
 
 

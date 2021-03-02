@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Planted</title>
-        <meta name="description" content="">
+        <meta name="description" content="Planted is a static site generator developed by Annie Bartholomew. It is designed to minimize its environmental footprint using minimal styling, image processing + no JavaScript on the frontend.">
         <link rel="icon"
         href="assets/images/icon.svg" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,9 +38,10 @@
 <h3 id="why-bother-to-develop-a-new-ssg-then-if-so-many-already-exist">Why bother to develop a new SSG then, if so many already exist?</h3>
 <p>Well, for one, it was good practice for me to create a new project in <a href="https://nodejs.org/en/">NodeJS</a>. I&#39;m also quite particular in how I like my sites to look and feel. While creating a custom theme for an existing site generator was an option, it likely wouldn&#39;t have been much more efficient. I&#39;ve used other static site generators before (my <a href="https://anniebartblog.netlify.app/">blog</a> still uses Hugo), but sorting through the documentation, recreating templates, writing CSS would have taken nearly as long as creating this lightweight, simple, easy to customize generator. Of course, this project is still in its early stages. I&#39;m planning on making it open source, so anyone can utilize it for their own projects. And I wanted the SSG to be as minimal as possible, minimize its ecological footprint and still look beautiful - to do that with an existing SSG, I would have had to do some Frankenstein-esque experiementation with cutting out and adding in code. </p>
 <h3 id="what-makes-its-footprint-smaller">What makes its footprint smaller?</h3>
-<p>For one, just using a static site generator in general means there is less energy required to serve the content when a user comes across the page since it doesn&#39;t have to be re-rendered every time. And by limiting the design choices to a single font, using system defaults as much as possible and preprocessing images before they&#39;re loaded into the site contributes to a smaller page weight. </p>
+<p>For one, just using a static site generator in general means there is less energy required to serve the content when a user comes across the page since it doesn&#39;t have to be re-rendered every time. And by limiting the design choices to a single font, using system defaults as much as possible and preprocessing images before they&#39;re loaded into the site contributes to a smaller page weight. 
+Having a smaller page weight is important because </p>
 <h3 id="will-there-be-additional-themes">Will there be additional themes?</h3>
-<p>Currently there is only one theme - the one you&#39;re looking at right now. I&#39;m hoping to add additional themes in the future, once I work more on the image preprocessing. I was previously using the Jimp library to automate the image resizing process and was hoping to use it for image dithering as well, but the quality of the images after was pretty dismal and the dithering did not have the effect I was looking for. </p>
+<p>Currently there is only one theme - the one you&#39;re looking at right now. I haven&#39;t optimized Planted for customization yet.  I&#39;m hoping to add additional themes in the future, once I work more on the image preprocessing. I was previously using the <a href="https://www.npmjs.com/package/jimp">Jimp library</a> to automate the image resizing process on the backend and was hoping to use it for image dithering as well, but the quality of the images after was pretty dismal and the dithering did not have the effect I was looking for. </p>
 
         
     </div></div>

@@ -3,6 +3,7 @@ title: prompt generator
 author: Annie Bartholomew
 date: 2020
 category: design, programming
+description: Prompt generator is a creative coding project I created while at Recurse Centerr. It is a browser-based application styled after the terminal and uses a command line interface to generate creative coding prompts. 
 ---
 While at [Recurse Center](https://www.recurse.com/about), I was a part of the creative coding group that met weekly, as well as communicating asynchonously through [Zulip](https://zulip.com/). One week, we decided to do a mini "Hack and tell" and create something in a 20 minute span. I decided to go with a [prompt generator](https://anniebart-prompt-generator.glitch.me/) - something to give me prompts for creative coding projects so I wouldn't become stuck with choice paralysis for the next quick Hack n Tell project. 
 
@@ -24,3 +25,6 @@ After getting feedback from my fellow creative coders, who all said that more co
 
 [![](assets/images/Terminal3.png)](https://anniebart-prompt-generator.glitch.me/)
 *The prompt generator after clearing the console.*
+
+[![Screenshot of the Prompt generator, with the text prompt generate at the bottom and several prompt ideas listed out, including bring an umbrella notifier](assets/images/Terminal4.png)](https://anniebart-prompt-generator.glitch.me/)
+*A few ideas from the prompt generator*

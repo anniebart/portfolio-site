@@ -3,6 +3,7 @@ title: Planted
 author: Annie Bartholomew
 date: 2021
 category: programming, design
+description: Planted is a static site generator developed by Annie Bartholomew. It is designed to minimize its environmental footprint using minimal styling, image processing + no JavaScript on the frontend. 
 ---
 Planted is a static site generator that I am developing to minimize its ecological footprint. I used it to create this site.
 
@@ -20,6 +21,7 @@ Well, for one, it was good practice for me to create a new project in [NodeJS](h
 
 ### What makes its footprint smaller?
 For one, just using a static site generator in general means there is less energy required to serve the content when a user comes across the page since it doesn't have to be re-rendered every time. And by limiting the design choices to a single font, using system defaults as much as possible and preprocessing images before they're loaded into the site contributes to a smaller page weight. 
+Having a smaller page weight is important because 
 
 ### Will there be additional themes?
-Currently there is only one theme - the one you're looking at right now. I'm hoping to add additional themes in the future, once I work more on the image preprocessing. I was previously using the Jimp library to automate the image resizing process and was hoping to use it for image dithering as well, but the quality of the images after was pretty dismal and the dithering did not have the effect I was looking for. 
+Currently there is only one theme - the one you're looking at right now. I haven't optimized Planted for customization yet.  I'm hoping to add additional themes in the future, once I work more on the image preprocessing. I was previously using the [Jimp library](https://www.npmjs.com/package/jimp) to automate the image resizing process on the backend and was hoping to use it for image dithering as well, but the quality of the images after was pretty dismal and the dithering did not have the effect I was looking for. 

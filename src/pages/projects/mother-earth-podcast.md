@@ -3,6 +3,7 @@ title: Mother Earth Podcast
 author: Annie Bartholomew
 date: 2020
 category: design
+description: I was tasked with designing the logo and visual identity for a newly launched environmental podcast, The Mother Earth Podcast. In less than a week, I had turned around a complete visual identity, including color pallette, logo, typesetting and visual elements, for use on their website, social media + marketing purposes. 
 ---
 
 For this project, I was tasked with designing the logo and visual identity for a newly launched environmental podcast, The Mother Earth Podcast. In less than a week, I had turned around a complete visual identity, including color pallette, logo, typesetting and visual elements, for use on their website, social media + marketing purposes. Inspiration for the logo came from the NASA image "Blue Marble", which marked the first Earth day in 1970. The podcast launched close to the 50ths anniversary of Earth Day and wanted to evoke that image of earth floating in space, while still remaining approachable and hopeful for the future.
@@ -21,6 +22,8 @@ For this project, I was tasked with designing the logo and visual identity for a
 </div>
 
 *early logo iterations*
+
+The client wasn't sure how they wanted the earth to be incorporated into the final logo - so I gave three options of the earth centered with the text overlayed, the earth slightly above and to the right of the text and as a
 
 The primary use case for the logo was on podcast platforms, such as Apple podcasts + Spotify. With that in mind, having the logo encased in a square made the most sense, as it would make 
 
