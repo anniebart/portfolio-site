@@ -11,11 +11,10 @@ One of the first things I did on the team was to audit the accessibility complia
 
 ![Screenshot of a document with squares of different colors, pointing out which were okay for web accessibility, and which color combinations were not good](assets/images/webAccessibility.png)
 
-Other core work I do at OCV is around designing content in conjunction with the rest of the OCV team for social media. With a following of over 18k, the content we put out is seen by a lot of eyes. (For more examples of OCV's social media, please visit OCV's [Instagram](https://www.instagram.com/ourclimatevoices/), [Facebook](https://www.facebook.com/ourclimatevoices) and [Twitter](https://twitter.com/Climate__Voices) pages)
+Other core work I do at OCV is around designing content in conjunction with the rest of the OCV team for social media. With a following of over 18k, the content we put out is seen by a lot of eyes. (For examples of OCV's social media, please visit OCV's [Instagram](https://www.instagram.com/ourclimatevoices/), [Facebook](https://www.facebook.com/ourclimatevoices) and [Twitter](https://twitter.com/Climate__Voices) pages). 
 
-![Screenshot of an Instagram post that poses the question, What is the relationship between climate justice and Black liberation?](assets/images/OCV-Insta2.png)
+![](assets/images/ClimatePrivilege.svg)
 
-
-In addition to social media, I've produced [video content](https://www.ourclimatevoices.org/2020/sheila) and am currently working on developing an interactive web application as a companion piece to OCV's forthcoming documentary, [Police in Our Climate.](https://www.ourclimatevoices.org/pioc) 
+Other projects include producing [video content](https://www.ourclimatevoices.org/2020/sheila), maintaining OCV's squarespace site and I'm currently developing an interactive web application as a companion piece to OCV's forthcoming documentary, [Police in Our Climate.](https://www.ourclimatevoices.org/pioc).
 
 

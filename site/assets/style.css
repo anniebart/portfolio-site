@@ -12,9 +12,11 @@ body {
     min-height: 80vh;
 }
 .content {
-    margin: 60px 10% 0 10%;
+    margin: 60px auto 0 auto;
     min-height: 80vh;
     padding-top:20px;
+    width: 80vw;
+    max-width: 840px;
 }
 .content img {
     margin: 0 auto;
@@ -37,7 +39,7 @@ footer {
 .rotate {
     transform: rotate(270deg);  
     position: fixed;
-    left:-190px;
+    left:-200px;
     top:260px;
 
     
@@ -92,13 +94,14 @@ h6 {
     font-size:20px;
 }
 h1 {
-    font-size:64px;
+    font-size:56px;
     margin-bottom: 100px;
 }
 h2 {
     font-size: 36px;
-    border-bottom: 4px dotted #182281;
+    border-bottom: 4px dashed #182281;
     margin:0;
+    padding-bottom: 4px;
 }
 .postSquare h6 {
 width: 25%;
@@ -119,7 +122,10 @@ nav {
     top: 0;
     display: block;
     text-align: center;
-    padding: 20px; 
+    padding: 12px; 
+}
+.small img{
+    max-width: 320px;
 }
 
 img {
@@ -128,6 +134,21 @@ img {
     display:block;
     margin: 0 auto;
     text-align: center;
+}
+em {
+    max-width: 800px;
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    font-size: 14px;
+}
+
+code {
+    
+    padding: 2px;
+    border: dotted 1px #182281;
+    background-color: #18238110 ;
 }
 @media (max-width:720px){
     p {
