@@ -3,7 +3,7 @@ title: annie bartholomew
 author: Annie Bartholomew
 ---
 
-# annie fitzgerald bartholomew is a designer, programmer, artist and environmentalist ✿
+# annie fitzgerald bartholomew is a designer, programmer and artist ✿
 <br>
 <br>
 

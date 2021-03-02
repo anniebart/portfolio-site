@@ -13,6 +13,8 @@ i got my BA in studio art and environmental studies from [middlebury college](ht
 i currently live and work in [brooklyn](https://open.spotify.com/track/5qxChyzKLEyoPJ5qGrdurN?si=tN_mafSVRZOQXsEkyOpynw).
 
 
-For information about my art practice, please see [here](other.html). 
+### Looking for my old site? You can still view it [here](https://anniebartholomew.superhi.com/)
+
+
 
 

@@ -10,6 +10,18 @@ For this project, I was tasked with designing the logo and visual identity for a
 
 *The Blue Marble: The View From Apollo 17*
 
+<div class="imageBlock">
+<img src="assets/images/TMEPprocess1.png">
+
+<img src="assets/images/TMEPprocess2.png">
+
+<img src="assets/images/TMEPprocess3.png">
+<img src="assets/images/TMEPprocess4.png">
+<img src="assets/images/TMEPprocess5.png">
+</div>
+
+*early logo iterations*
+
 The primary use case for the logo was on podcast platforms, such as Apple podcasts + Spotify. With that in mind, having the logo encased in a square made the most sense, as it would make 
 
 <div class="small"><img src="assets/images/TMEP.png"></div>
