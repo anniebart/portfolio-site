@@ -57,6 +57,11 @@ footer {
     margin-left: 20px;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+}
+
 .icons {
     position:fixed;
     right:8px;
@@ -141,6 +146,7 @@ nav {
 }
 .small img{
     max-width: 320px;
+    width: 20vw;
 }
 img {
     max-width: 800px;
