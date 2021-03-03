@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 body {
     font-family: Space Mono;
     letter-spacing: 1.2px;
@@ -36,22 +37,21 @@ footer {
     text-align: center;
     margin: 80px auto 0 auto;
 }
-
 .imageBlock {
     display:flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .imageBlock img {
-    max-width: 240px;
-    width: 10vw;
+    max-width: 160px;
+    width: 20vw;
+    margin: 4px;
 }
 .rotate {
     transform: rotate(270deg);  
     position: fixed;
     left:-200px;
-    top:260px;
-
-    
+    top:260px;  
 }
 .rotate a {
     margin-left: 20px;
@@ -104,7 +104,7 @@ h6 {
     font-size:20px;
 }
 h1 {
-    font-size:56px;
+    font-size:64px;
 }
 .hero {
     margin-top: -80px;
@@ -142,9 +142,10 @@ nav {
 .small img{
     max-width: 320px;
 }
-
 img {
     max-width: 800px;
+    max-height: 600px;
+    object-fit:cover;
     width:80vw;
     display:block;
     margin: 0 auto;
@@ -158,9 +159,7 @@ em {
     display: block;
     font-size: 14px;
 }
-
 code {
-    
     padding: 2px;
     border: dotted 1px #182281;
     background-color: #18238110 ;
