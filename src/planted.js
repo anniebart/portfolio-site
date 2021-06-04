@@ -141,6 +141,7 @@ const makeProjectPage = (template, {content, description}) =>
     template
         .replace(/{{content}}/g, content)
         .replace(/{{description}}/g, description)
+
 //create index page with links to all pages
 const projects = () =>{
     const srcPath = path.join(path.resolve(), 'src')
@@ -155,22 +156,14 @@ const projects = () =>{
         if (a.date > b.date) return -1
         else return 1
     })
-    otherLinks.sort((a, b)=>{
-        if (a.date > b.date) return -1
-        else return 1
-    })
+    
     
     const indexList = indexLinks.forEach(item=>{
         indexStr +=`<a href="${item.link}"><li class="postSquare"> <h6>${item.title}</h6><h6>${item.cat}</h6><h6>${item.date} </h6></li></a>`
     })
-    const otherList = otherLinks.forEach(item=>{
-        otherStr +=`<a href="${item.link}"><li class="postSquare"> <h6>${item.title}</h6><h6>${item.cat}</h6><h6>${item.date} </h6></li></a>`
-    })
 
     const indexPage = makeProjectPage(indexTemplate, {content: indexStr, description: 'Annie Bartholomew is a designer, programmer and artist. Past projects include speculative designs for authentication methods and message sending, various design work for Our Climate Voices + freelance digital design work. She is an alum of Recurse Center.'})
-    const otherPage = makeProjectPage(indexTemplate, {content: otherStr, description: 'Annie Bartholomew is a designer, artist + programmer'})
     saveFile(outPath + '/projects.html', indexPage)
-    saveFile(outPath+ '/other.html', otherPage)
 }
 projects();
 

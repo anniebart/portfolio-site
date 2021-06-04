@@ -50,11 +50,11 @@ footer {
 .rotate {
     transform: rotate(270deg);  
     position: fixed;
-    left:-200px;
-    top:260px;  
+    left:-150px;
+    top:240px;  
 }
 .rotate a {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .flex {
