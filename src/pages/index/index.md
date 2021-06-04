@@ -10,7 +10,7 @@ annie fitzgerald bartholomew is a designer, programmer and artist ✿
 </h1>
 </div>
 
-annie has designed for clients in tech, media and environmental fields. she is currently a senior digital content fellow at [our climate voices](https://www.ourclimatevoices.org/), a climate justice organization that amplifies first-person climate change narratives and uses ethical storytelling. she is also an alum of [recurse center](https://www.recurse.com/about). her technical skills include digital design with adobe creative suite , figma + sketch, developing responsive websites + full stack web applications, and is always learning new things.
+annie has worked for clients in art/design, tech, media and environmental fields. currently, she is a [2021 RARE with Google fellow](https://rare.withgoogle.com/), working as a UX/visual designer on the [material design](https://material.io/) team. she also volunteers at [our climate voices](https://www.ourclimatevoices.org/), a climate justice organization that amplifies first-person climate change narratives and uses ethical storytelling. she is an alum of [recurse center](https://www.recurse.com/about). her technical skills include digital + product design with adobe creative suite, figma + sketch, developing responsive websites + full stack web applications, and is always learning new things.
 
 
-she currently lives and works in brooklyn
+she currently lives and works in brooklyn.
