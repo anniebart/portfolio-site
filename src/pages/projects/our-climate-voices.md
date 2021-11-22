@@ -1,7 +1,7 @@
 ---
 title: our climate voices
 author: Annie Bartholomew
-date: 2021
+date: 2020
 category: design
 description: Our Climate Voices is a grassroots climate justice organization that focuses on amplifying the climate narratives of those who have been traditionally left out of mainstream media. I joined the team in June 2020 as a digital content fellow.
 ---
